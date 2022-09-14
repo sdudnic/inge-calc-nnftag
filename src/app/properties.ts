@@ -1,7 +1,6 @@
 import { PropertyCode } from './calculator/common/enums';
 
-export class Properties {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ];
-
+export class Properties {
   static readonly DependentProperties = {
     [PropertyCode.ABCO]: [],
     [PropertyCode.ACC]: [],
@@ -467,5 +466,4 @@ export class Properties {                                                       
   XQC_INFO = '';
   XQC_INFO2 = '({{{Quasi-permanent combination}}})';
   Z0CO = '0.597458';
-
 }
