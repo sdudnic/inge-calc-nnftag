@@ -1,5 +1,16 @@
 <h2>Ingé Calc</h2>
 <form [formGroup]="paramsFormGroup">
+<label>{{ PropertyCode.A }}</label  ><input type="number" formControlName="{{ PropertyCode.A }}" />
+  <label>{{ PropertyCode.B }}</label  ><input type="number" formControlName="{{ PropertyCode.B }}" />
+
+  <label>{{ PropertyCode.C }}</label
+  ><input type="number" formControlName="{{ PropertyCode.C }}" /><small>
+    => a * b</small  >
+  <hr />
+  <label>ECEFF</label><input type="number" formControlName="ECEFF" />
+
+  <label>AEC</label><input type="number" formControlName="AEC" />
+  <hr />
   <ul>
     <li *ngFor="let prop of properties | keyvalue">
       <label [ngClass]="{'calculated': isDependent(prop.key)}">{{ prop.key }}</label>      
