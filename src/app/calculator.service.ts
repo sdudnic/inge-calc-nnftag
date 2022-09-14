@@ -5,20 +5,17 @@ import { Properties } from './properties';
 
 @Injectable()
 export class CalculatorService {
-  constructor() {}
+  constructor() { }
 
   async calculate(properties: Record<PropertyCode, any>) {
-    const props = new Properties();
-
-    Object.keys(props).forEach(async (key: PropertyCode) => {
-      if (Properties.CalculatedKeys.indexOf(key) > -1) {
-        const args = Properties.getDependentValues(key, properties);
-        properties[key] = await CalculatorService.callByName(
-          key,
-          Engine,
-          ...args
-        );
-      }
+    const keys = Object.keys(Properties.DependentProperties);
+    keys.forEach(async (key: PropertyCode) => {
+      const args = Properties.getDependentValues(key, properties);
+      properties[key] = await CalculatorService.callByName(
+        key,
+        Engine,
+        ...args
+      );
     });
     return properties;
   }
